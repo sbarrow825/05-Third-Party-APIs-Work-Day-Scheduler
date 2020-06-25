@@ -71,7 +71,7 @@ textarea{
 }
 
 .row-height {
-  height: 70px;
+  height: 90px;
   text-align: vertical;
 }
 
@@ -79,4 +79,14 @@ hr {
   border: none;
   height: 3px;
   background-color: grey;
+}
+
+.save-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
 }
