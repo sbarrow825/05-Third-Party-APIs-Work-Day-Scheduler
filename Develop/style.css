@@ -63,6 +63,8 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  padding: 10px 30px;
+  align-items: center;
 }
 
 .saveBtn i:hover {
@@ -71,7 +73,7 @@ textarea{
 }
 
 .row-height {
-  height: 90px;
+  height: 70px;
   text-align: vertical;
 }
 
@@ -79,14 +81,4 @@ hr {
   border: none;
   height: 3px;
   background-color: grey;
-}
-
-.save-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 20px 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
 }
