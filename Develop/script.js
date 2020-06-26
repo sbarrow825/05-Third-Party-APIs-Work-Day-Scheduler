@@ -8,6 +8,7 @@ var TwoPMText = $("#2pm");
 var ThreePMText = $("#3pm");
 var FourPMText = $("#4pm");
 var FivePMText = $("#5pm");
+var currentDay = $("#currentDay")
 var allHourTexts = [NineAMText, TenAMText, ElevenAMText, TwelvePMText, OnePMText, TwoPMText, ThreePMText, FourPMText, FivePMText];
 
 
@@ -42,4 +43,25 @@ function setUpSchedule() {
     }
 }
 
+function updateTime() {
+    currentDay.html(moment().format("dddd, MMMM Do"));
+    console.log(currentDay.val());
+    var currentHourIndex = moment().hour() - 9;
+    setBackgroundColors(currentHourIndex);
+}
+
+function setBackgroundColors(currentHourIndex) {
+    for (i = 0; i < allHourTexts.length; i += 1) {
+        if (i < currentHourIndex) {
+            allHourTexts[i].css("background-color", "grey");
+        } else if (i === currentHourIndex) {
+            allHourTexts[i].css("background-color", "red");
+        } else {
+            allHourTexts[i].css("background-color", "green");
+        }
+    }
+}
+
 setUpSchedule();
+setInterval(updateTime, 1000);
+updateTime();
