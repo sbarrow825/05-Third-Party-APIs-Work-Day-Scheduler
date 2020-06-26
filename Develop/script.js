@@ -1,4 +1,3 @@
-var savedText = []
 var NineAMText = $("#9am");
 var TenAMText = $("#10am");
 var ElevenAMText = $("#11am");
@@ -17,8 +16,6 @@ $(document).on("click", ".saveBtn", save);
 function save() {
     var numberButtonPressed = $(this).attr("id");
     numberButtonPressed = parseInt(numberButtonPressed);
-    // console.log(NineAMText.val());
-    // console.log(NineAMText.val() === "");
     var thisHourText = allHourTexts[numberButtonPressed].val();
     if (localStorage.getItem("savedSchedule")) {
         var newSchedule = JSON.parse(localStorage.getItem("savedSchedule"));
@@ -45,7 +42,6 @@ function setUpSchedule() {
 
 function updateTime() {
     currentDay.html(moment().format("dddd, MMMM Do"));
-    console.log(currentDay.val());
     var currentHourIndex = moment().hour() - 9;
     setBackgroundColors(currentHourIndex);
 }
